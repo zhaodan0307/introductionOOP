@@ -5,6 +5,41 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Assignment1 {
+    public static void task1(){
+        System.out.println("how many element");
+        Scanner in = new Scanner(System.in);
+        int size = in.nextInt();
+        System.out.println("have create a array size of "+ size);
+        Object[] arr = new Object[size];
+        String input;
+        for(int i = 0 ;i<arr.length; i++){
+
+            System.out.println("please input the "+i +" element");
+            input=in.next();
+            if(0==Integer.valueOf(input) || 1==Integer.valueOf(input)){
+                arr[i]=Boolean.valueOf(input);
+
+                System.out.println(arr[i].getClass().getSimpleName());
+            }
+            if((Integer.valueOf(input)>=-128&&Integer.valueOf(input)<=127)&&(Integer.valueOf(input)!=0)&&(Integer.valueOf(input)!=1) ){
+                arr[i]=Byte.valueOf(input);
+                System.out.println(arr[i].getClass().getSimpleName());
+            }
+            if((Integer.valueOf(input)<-128&&Integer.valueOf(input)>=-32768)||(Integer.valueOf(input)<=32767&&Integer.valueOf(input)>127)){
+                arr[i]=Short.valueOf(input);
+                System.out.println(arr[i].getClass().getSimpleName());
+            }
+            if((Integer.valueOf(input)<-32768)||(Integer.valueOf(input)>32767)){
+                arr[i]=Integer.valueOf(input);
+                System.out.println(arr[i].getClass().getSimpleName());
+            }
+        }
+
+        for(int i =0;i<size;i++){
+            System.out.println(arr[i]);
+        }
+
+    }
 
     public static void task2(){
         //1)
@@ -65,6 +100,7 @@ public class Assignment1 {
     }
 
     public static void main(String[] args) {
+        task1();
         task2();
     }
 
